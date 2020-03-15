@@ -1,11 +1,16 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<?php
+
+<h1>Welkom op het netland beeheerders paneel</h1>
+    <?php
+
 $host = '127.0.0.1';
 $db   = 'netland';
 $user = 'root';
@@ -40,11 +45,11 @@ $series0 = $stmt0->fetchAll(PDO::FETCH_OBJ);
 
 
 ?>
-<div class ="table">
+    <div class="table">
 
-<table>
-<h1>movies</h1>
-<?php
+        <table>
+            <h1>movies</h1>
+            <?php
 
 foreach ($data as $key => $value) {
     echo "<tr>" . 
@@ -52,33 +57,31 @@ foreach ($data as $key => $value) {
     "<td>" . $value->duur . "</td>" .
     "</tr>";
 
-    // echo $value->title . "<br>" . $value->duur . "<br>" . $value->datum_van_uitkomst . "<br>" . $value->land_van_uitkomst . "<br>" . $value->description . "<br>" . $value->youtube_trailer_id;
 }
 
 
 ?>
-</table>
+        </table>
 
-<table>
-<h2>series</h2>
-<?php
+        <table>
+            <h2>series</h2>
+            <?php
 
 foreach ($series0 as $key => $value) {
     echo "<tr>" . 
     "<td>" . $value->title . "</td>" .
     "<td>" . $value->rating . "</td>" .
     "</tr>";
-
-    // echo $value->title . "<br>" . $value->duur . "<br>" . $value->datum_van_uitkomst . "<br>" . $value->land_van_uitkomst . "<br>" . $value->description . "<br>" . $value->youtube_trailer_id;
 }
 
 ?>
 
 
 
-</table>
+        </table>
 
-</div>
+    </div>
 
 </body>
+
 </html>
