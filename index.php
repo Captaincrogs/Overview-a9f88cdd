@@ -23,11 +23,11 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
-try {
+    try {
      $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
+    } catch (\PDOException $e) {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
-}
+    }
 
 $sql = "SELECT * FROM movies";
 $stmt = $pdo->prepare($sql);
@@ -35,7 +35,6 @@ $stmt->execute();
 
 $data = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-//var_dump ($data);
 
 $sql0 = "SELECT * FROM series";
 $stmt0 = $pdo->prepare($sql0);
@@ -45,33 +44,28 @@ $series0 = $stmt0->fetchAll(PDO::FETCH_OBJ);
 
 
 ?>
-    <div class="table">
+        <div class="table">
 
         <table>
             <h1>movies</h1>
             <?php
 
 foreach ($data as $key => $value) {
-    echo "<tr>" . 
-    "<td>" . $value->title . "</td>" .
-    "<td>" . $value->duur . "</td>" .
-    "</tr>";
+                echo "<tr>" . 
+    "<td>" . $value->title . "</td>" ."<td>" . $value->duur . "</td>" ."</tr>";
 
 }
 
 
-?>
+            ?>
         </table>
 
-        <table>
+                    <table>
             <h2>series</h2>
             <?php
 
 foreach ($series0 as $key => $value) {
-    echo "<tr>" . 
-    "<td>" . $value->title . "</td>" .
-    "<td>" . $value->rating . "</td>" .
-    "</tr>";
+    echo "<tr>" . "<td>" . $value->title . "</td>" ."<td>" . $value->rating . "</td>" ."</tr>";
 }
 
 ?>
