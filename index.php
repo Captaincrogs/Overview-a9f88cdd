@@ -51,7 +51,7 @@ foreach ($series as $row) {?>
                 <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["rating"] ?></td>
             </tr>
-        <?php }?>
+<?php }?>
 </table>
 <h1>Films</h1>
 <table>
@@ -65,7 +65,7 @@ foreach ($films as $row) {?>
             <td><?php echo $row["titel"] ?></td>
             <td><?php echo $row["duur"] ?></td>
         </tr>
-    <?php }?>
+<?php }?>
 </table>
 
 
