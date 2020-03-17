@@ -18,14 +18,14 @@ $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, PDO::ATTR_EMULATE_PREPARES => false, ];
-try
+    try
 {
     $pdo = new PDO($dsn, $user, $pass, $options);
-}
-catch(\PDOException $e)
+    }
+    catch(\PDOException $e)
 {
     throw new \PDOException($e->getMessage() , (int)$e->getCode());
-}
+    }
 
 $sql = "SELECT * FROM movies";
 $stmt = $pdo->prepare($sql);
@@ -39,18 +39,15 @@ $stmt0->execute();
 
 $series0 = $stmt0->fetchAll(PDO::FETCH_OBJ);
 
-?>
+    ?>
         <div class="table">
 
         <table>
             <h1>movies</h1>
             <?php
+
 foreach ($data as $key => $value)
-{
-
-    echo "<tr>" . "<td>" . $value->title . "</td>" . "<td>" . $value->duur . "</td>" . "</tr>";
-
-}
+{echo "<tr>" . "<td>" . $value->title . "</td>" . "<td>" . $value->duur . "</td>" . "</tr>";}
 
 ?>
         </table>
@@ -58,16 +55,11 @@ foreach ($data as $key => $value)
                     <table>
             <h2>series</h2>
             <?php
-foreach ($series0 as $key => $value)
-{
-    echo "<tr>" . "<td>" . $value->title . "</td>" . "<td>" . $value->rating . "</td>" . "</tr>";
-}
+            foreach ($series0 as $key => $value)
+{echo "<tr>" . "<td>" . $value->title . "</td>" . "<td>" . $value->rating . "</td>" . "</tr>";}
 
-?>
-
-
-
-        </table>
+            ?>
+            </table>
 
     </div>
 
