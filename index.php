@@ -1,14 +1,14 @@
 <?php
-$host = '127.0.0.1';
+$host='localhost';
 $db = 'netland';
 $username = 'root';
 $password = '';
 
-$dsn = "mysql:host=$host;dbname=$db";
+$dsn= "mysql:host=$host;dbname=$db";
 try {
     // create a PDO connection with the configuration data
     $conn = new PDO($dsn, $username, $password);
-
+    
     // display a message if connected to database successfully
     if ($conn) {
         echo "Connected to the <strong>$db</strong> database successfully!";
@@ -29,11 +29,11 @@ $films = $conn->query('select titel, duur from films');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+         
         table, td {
             border: 1px solid black
         }
-
+        
     </style>
 </head>
 <body>
@@ -46,12 +46,12 @@ $films = $conn->query('select titel, duur from films');
         <th>Rating</th>
     </tr>
         <?php
-    foreach ($series as $row) {?>
+        foreach($series as $row) { ?>
             <tr>
-                <td><?php echo $row["title"] ?></td>
+                <td><?php echo $row["title"]?></td>
                 <td><?php echo $row["rating"] ?></td>
             </tr>
-<?php }?>
+        <?php } ?>
 </table>
 <h1>Films</h1>
 <table>
@@ -60,12 +60,12 @@ $films = $conn->query('select titel, duur from films');
         <th>Duur</th>
     </tr>
     <?php
-    foreach ($films as $row) {?>
+    foreach($films as $row) { ?>
         <tr>
             <td><?php echo $row["titel"] ?></td>
             <td><?php echo $row["duur"] ?></td>
         </tr>
-<?php }?>
+    <?php } ?>
 </table>
 
 
