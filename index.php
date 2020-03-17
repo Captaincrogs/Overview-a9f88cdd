@@ -46,7 +46,7 @@ $films = $conn->query('select titel, duur from films');
         <th>Rating</th>
     </tr>
         <?php
-foreach ($series as $row) {?>
+    foreach ($series as $row) {?>
             <tr>
                 <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["rating"] ?></td>
@@ -60,7 +60,7 @@ foreach ($series as $row) {?>
         <th>Duur</th>
     </tr>
     <?php
-foreach ($films as $row) {?>
+    foreach ($films as $row) {?>
         <tr>
             <td><?php echo $row["titel"] ?></td>
             <td><?php echo $row["duur"] ?></td>
