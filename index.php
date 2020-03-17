@@ -45,24 +45,15 @@ $series0 = $stmt0->fetchAll(PDO::FETCH_OBJ);
         <table>
             <h1>movies</h1>
             <?php
-
-foreach ($data as $key => $value)
-{echo "<tr>" . "<td>" . $value->title . "</td>" . "<td>" . $value->duur . "</td>" . "</tr>";}
-
-?>
+            foreach ($data as $key => $value)
+{echo "<tr>" . "<td>" . $value->title . "</td>" . "<td>" . $value->duur . "</td>" . "</tr>";}?>
         </table>
-
-                    <table>
+        <table>
             <h2>series</h2>
             <?php
             foreach ($series0 as $key => $value)
-{echo "<tr>" . "<td>" . $value->title . "</td>" . "<td>" . $value->rating . "</td>" . "</tr>";}
-
-            ?>
+{echo "<tr>" . "<td>" . $value->title . "</td>" . "<td>" . $value->rating . "</td>" . "</tr>";}?>
             </table>
-
-    </div>
-
-</body>
-
-</html>
+            </div>
+            </body>
+            </html>
